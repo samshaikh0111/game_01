@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(tic.jpg); 
+    background-size: cover;
+    color: #fff;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Board Styles */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto;
+  }
+  
+  .cell {
+
+        width: 100px;
+        height: 100px;
+        background: #34495e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem; /* Increased font size */
+        color: #fff;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+  .cell:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+  
+  .cell.x {
+    color: #e74c3c;
+    text-shadow: 0 2px 8px rgba(231, 76, 60, 0.7);
+  }
+  
+  .cell.o {
+    color: #3498db;
+    text-shadow: 0 2px 8px rgba(52, 152, 219, 0.7);
+  }
+  
+  .cell.win {
+    background: linear-gradient(135deg, #01ff16, #2ecc71);
+    animation: glow 1.5s infinite;
+  }
+  
+  /* Glow animation for winning cells */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(39, 174, 96, 1);
+    }
+  }
+  
+  /* Message Box */
+  .message {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .message h2 {
+    font-size: 2rem;
+  }
+  
+  #restart-button {
+    padding: 10px 20px;
+    background: #16a085;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #restart-button:hover {
+    background: #1abc9c;
+  }
+  
